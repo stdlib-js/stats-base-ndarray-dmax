@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-05-26)
+## Unreleased (2025-11-29)
 
 <section class="features">
 
@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`347914d`](https://github.com/stdlib-js/stdlib/commit/347914dc5de466218b40f73e5302d8439f7ba20f) - **test:** update descriptions _(by Athan Reines)_
 -   [`7d6d89e`](https://github.com/stdlib-js/stdlib/commit/7d6d89eea2ee9dcf1fb3d9b1c9cb12d22d4f9752) - **test:** fix test case _(by Athan Reines)_
 -   [`cccbea9`](https://github.com/stdlib-js/stdlib/commit/cccbea9ab78ee8990c7545e7aa9cd7036822a1a2) - **feat:** add `stats/base/ndarray/dmax` _(by Athan Reines)_
 
