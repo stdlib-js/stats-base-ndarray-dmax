@@ -1,7 +1,7 @@
 /**
 * @license Apache-2.0
 *
-* Copyright (c) 2025 The Stdlib Authors.
+* Copyright (c) 2026 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -20,17 +20,23 @@
 
 // MODULES //
 
+var resolve = require( 'path' ).resolve;
 var bench = require( '@stdlib/bench-harness' );
 var uniform = require( '@stdlib/random-array-uniform' );
 var isnan = require( '@stdlib/math-base-assert-is-nan' );
 var pow = require( '@stdlib/math-base-special-pow' );
 var ndarray = require( '@stdlib/ndarray-base-ctor' );
+var format = require( '@stdlib/string-format' );
+var tryRequire = require( '@stdlib/utils-try-require' );
 var pkg = require( './../package.json' ).name;
-var dmax = require( './../lib' );
 
 
 // VARIABLES //
 
+var dmax = tryRequire( resolve( __dirname, './../lib/native.js' ) );
+var opts = {
+	'skip': ( dmax instanceof Error )
+};
 var options = {
 	'dtype': 'float64'
 };
@@ -101,7 +107,7 @@ function main() {
 	for ( i = min; i <= max; i++ ) {
 		len = pow( 10, i );
 		f = createBenchmark( len );
-		bench( pkg+':len='+len, f );
+		bench( format( '%s::native:len=%d', pkg, len ), opts, f );
 	}
 }
 
